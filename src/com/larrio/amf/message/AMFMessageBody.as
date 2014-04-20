@@ -72,20 +72,29 @@ package com.larrio.amf.message
 			var result:ByteArray = new ByteArray();
 			
 			var bytes:ByteArray = new ByteArray();
-			bytes.writeMultiByte(this.target, "UTF-8");
+			if (this.target)
+			{
+				bytes.writeMultiByte(this.target, "UTF-8");
+			}
 			
 			result.writeShort(bytes.length);
 			result.writeBytes(bytes);
 			
 			bytes = new ByteArray();
-			bytes.writeMultiByte(this.response, "UTF-8");
+			if (this.response)
+			{
+				bytes.writeMultiByte(this.response, "UTF-8");
+			}
 			
 			result.writeShort(bytes.length);
 			result.writeBytes(bytes);
 			
 			bytes = new ByteArray();
 			bytes.objectEncoding = this.version == AMFMessageVersion.AMF3? ObjectEncoding.AMF3 : ObjectEncoding.AMF0;
-			bytes.writeObject(this.data);
+			if (this.data)
+			{
+				bytes.writeObject(this.data);
+			}
 			
 			result.writeInt(bytes.length);
 			result.writeBytes(bytes);
