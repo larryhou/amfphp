@@ -33,18 +33,10 @@ package com.larrio.amf
 		 * 构造函数
 		 * create a [AMFConnection] object
 		 */
-		public function AMFConnection()
-		{
-			_map = new Dictionary(false);
-		}
-		
-		/**
-		 * 连接服务器入口
-		 * @param gateway	服务器入口
-		 */		
-		public function connect(gateway:String):void
+		public function AMFConnection(gateway:String)
 		{
 			_gateway = gateway;
+			_map = new Dictionary(false);
 		}
 		
 		/**

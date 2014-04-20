@@ -19,8 +19,7 @@ package
 		 */
 		public function AMFConnectionMain()
 		{
-			var amf:AMFConnection = new AMFConnection();
-			amf.connect("http://localhost:8080/amfphp/gateway.php");
+			var amf:AMFConnection = new AMFConnection("http://localhost:8080/amfphp/gateway.php");
 			amf.call("HelloWorld.say", responder, ["hello"], true);
 			
 			var list:Vector.<AMFRequest> = new Vector.<AMFRequest>();

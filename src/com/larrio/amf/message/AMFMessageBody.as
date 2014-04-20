@@ -17,17 +17,18 @@ package com.larrio.amf.message
 		public var version:uint;
 		
 		/**
-		 * 命令字 
+		 * PHP命令字 
 		 */		
 		public var target:String;
 		
 		/**
-		 * 回调 
+		 * 请求标记
+		 * @usage 可用来识别服务器回包
 		 */		
 		public var response:String;
 		
 		/**
-		 * 服务器回包数据 
+		 * 包体数据
 		 */		
 		public var data:Object;
 		
